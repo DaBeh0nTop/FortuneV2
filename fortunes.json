@@ -1,50 +1,15 @@
 {
-  "english": {
-    "good": [
-      "You will find joy in unexpected places.",
-      "Your creativity will lead you to success.",
-      "Good news will come to you soon.",
-      "Happiness is around the corner.",
-      "Adventure awaits you this weekend."
-    ],
-    "bad": [
-      "You will step on Lego tomorrow. Ouch!",
-      "Someone will eat your fries when you’re not looking.",
-      "Don’t trust pigeons today.",
-      "Your WiFi will betray you at the worst time.",
-      "Beware: Monday is coming faster than you think."
-    ]
-  },
-  "tagalog": {
-    "good": [
-      "Darating ang swerte sa hindi inaasahang oras.",
-      "Isang bagong oportunidad ang kakatok sa iyong pintuan.",
-      "Ang sipag at tiyaga mo ay magbubunga.",
-      "May magandang balitang darating mula sa kaibigan.",
-      "Laging may pag-asa sa bawat umaga."
-    ],
-    "bad": [
-      "Mawawala ang tsinelas mo ngayong linggo.",
-      "May darating na bisita pero walang pasalubong.",
-      "Malalamangan ka sa tong-its.",
-      "Ang ulam bukas ay tuyo lang.",
-      "May bubulong ng tsismis laban sa’yo."
-    ]
-  },
-  "ilocano": {
-    "good": [
-      "Adda ragsak a sumangbay iti biagmo.",
-      "Ti panagsagrap ket mangiturong iti panagballigi.",
-      "Umay ti baro a gundaway kadagiti plano.",
-      "Ti ayat ket mangted iti namnama.",
-      "Ti biag ket agbalin a napintas a dalan."
-    ],
-    "bad": [
-      "Agbaliw ti tiempo ket maikkat ti payongmo.",
-      "Maubos ti loadmo a kasla apagisu.",
-      "Agtalinaed a narigat ti klase inton bigat.",
-      "Ti asom ket mangan ti sapatosmo.",
-      "Ti wifi ket bumagsak iti oras ti quiz."
-    ]
-  }
+  "fortunes": [
+    { "id": 1, "lang": "en", "type": "funny", "message": "You will step on Lego today. Beware." },
+    { "id": 2, "lang": "en", "type": "lucky", "message": "A hidden blessing will reveal itself soon." },
+    { "id": 3, "lang": "tl", "type": "hugot", "message": "Kung mahal ka niya, hindi ka niya ipaparamdam na pangalawa." },
+    { "id": 4, "lang": "tl", "type": "funny", "message": "Magugutom ka mamaya. Pero hindi ka pa rin marunong magluto." },
+    { "id": 5, "lang": "en", "type": "sarcasm", "message": "Congratulations! You will win an argument… in your head." },
+    { "id": 6, "lang": "en", "type": "unlucky", "message": "Oops. That sound wasn’t your chair." },
+    { "id": 7, "lang": "tl", "type": "lovely", "message": "May lihim na humahanga sa’yo. Clue: lagi mo siyang nakikita." },
+    { "id": 8, "lang": "en", "type": "uplifting", "message": "The darkest nights bring the brightest stars." },
+    { "id": 9, "lang": "tl", "type": "beware", "message": "May darating na chismis. Huwag kang papatol." },
+    { "id": 10, "lang": "en", "type": "hugot", "message": "Sometimes, the cookie crumbles… like your last relationship." }
+    // … continue up to 500–1000 entries
+  ]
 }
