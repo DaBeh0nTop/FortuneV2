@@ -12,7 +12,7 @@
   --funny:#ffd700; --inspiring:#87ceeb; --unlucky:#4a4a4a; --lucky:#008000;
   --sarcasm:#800080; --beware:#ff0000; --uplifting:#20b2aa; --lovely:#ff69b4;
   --hugot:#b22222; --dabeh:#ff4500;
-  --cookie-shadow:#e0ac69; --bg-start:#f0f0f0; --bg-end:#ffe4b5;
+  --cookie-shadow:#e0ac69; --bg-start:#f5f5dc; --bg-end:#f0e68c;
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -24,10 +24,11 @@ body{
   justify-content:center;
   align-items:center;
   min-height:100vh;
-  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
-  background-image: url('https://i.postimg.cc/DyPq8f1v/subtle-bg.png');
-  background-size: cover;
-  background-position: center;
+  background:linear-gradient(135deg,var(--bg-start),var(--bg-end));
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255 255 255 / 0.15) 2px, transparent 3px),
+    radial-gradient(circle at 80% 80%, rgba(255 255 255 / 0.15) 2px, transparent 3px);
+  background-size:100px 100px;
   text-align:center;
   padding:20px;
   user-select:none;
@@ -37,15 +38,7 @@ header{text-align:center;margin-bottom:20px;}
 header h1{font-size:2em;color:#333;}
 header p{font-size:1em;color:#555;margin-top:5px;}
 
-.container{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  z-index:2;
-  width:100%;
-}
-
+.container{display:flex;flex-direction:column;align-items:center;z-index:2;}
 .cookie{
   width:200px; max-width:80vw; cursor:pointer; transition:transform 0.3s;
   filter:drop-shadow(5px 5px 5px var(--cookie-shadow));
@@ -62,9 +55,9 @@ header p{font-size:1em;color:#555;margin-top:5px;}
 .fortune-card{
   position:fixed; top:50%; left:50%; transform:translate(-50%,-50%) scale(0.5);
   opacity:0; visibility:hidden;
-  background:rgba(255 255 255 / 0.2); border-radius:20px;
+  background:rgba(255 255 255 / 0.15); border-radius:20px;
   padding:25px 30px; max-width:400px; width:90%;
-  text-align:center; backdrop-filter:blur(20px);
+  text-align:center; backdrop-filter:blur(15px);
   transition: transform 0.5s ease-out, opacity 0.5s ease-out, border-color 0.3s ease;
   border:4px solid transparent; z-index:10;
 }
@@ -73,7 +66,10 @@ header p{font-size:1em;color:#555;margin-top:5px;}
 .category-badge{font-family:"Poppins",sans-serif;font-weight:700;color:white;padding:6px 16px;border-radius:50px;text-transform:uppercase;font-size:0.85em;margin-bottom:12px;display:inline-block;}
 .fortune-text{font-size:1.3em;line-height:1.5;margin-bottom:15px;color:#222;}
 .close-btn{margin-top:10px;padding:5px 10px;border:none;border-radius:5px;cursor:pointer;font-weight:700;background:#333;color:#fff;}
-.countdown-text{font-size:1.2em;color:#333;margin-top:10px;font-weight:700;}
+
+.countdown-text{
+  font-size:1.2em;color:#333;margin-top:10px;font-weight:700;text-align:center;
+}
 
 @media(max-width:600px){
   header h1{font-size:1.5em;}
@@ -115,7 +111,6 @@ const fortuneText=document.getElementById("fortune-text");
 const countdownText=document.getElementById("countdown-text");
 const closeBtn=document.getElementById("close-btn");
 
-// Load fortunes
 fetch("fortunes.json")
   .then(res=>res.json())
   .then(data=>{fortunes=data; available=shuffle([...fortunes]);});
@@ -125,7 +120,7 @@ function shuffle(array){for(let i=array.length-1;i>0;i--){const j=Math.floor(Mat
 function getFortune(){if(available.length===0) available=shuffle([...fortunes]); return available.pop();}
 function getEmoji(c){switch(c){case"funny":return"😂";case"inspiring":return"✨";case"unlucky":return"😬";case"lucky":return"🍀";case"sarcasm":return"🙃";case"beware":return"⚠️";case"uplifting":return"🌈";case"lovely":return"💕";case"hugot":return"💔";case"dabeh":return"🛑";default:return"";}}
 
-// Display fortune immediately
+// Show fortune card immediately after cookie shake
 function displayFortune(fortune){
   categoryBadge.textContent=fortune.category.toUpperCase()+" "+getEmoji(fortune.category);
   categoryBadge.style.backgroundColor=categoryColors[fortune.category]||"#333";
@@ -135,34 +130,30 @@ function displayFortune(fortune){
   countdownText.textContent="";
 }
 
-// Start cooldown after closing
-function startCooldown(){
-  cooldown=true;
+// Start cooldown animation after closing the card
+function startCooldown(callback){
   const messages=["Munching...","Digesting...","Raging...","Blessed...","Crunching..."];
-  let countdown=Math.floor(Math.random()*6)+5; // 5-10s
-  countdownText.textContent=messages[Math.floor(Math.random()*messages.length)]+" "+countdown+"s";
-
+  let countdown=Math.floor(Math.random()*6)+5; //5-10s
+  countdownText.style.display="block";
   const interval=setInterval(()=>{
-    countdown--;
     countdownText.textContent=messages[Math.floor(Math.random()*messages.length)]+" "+countdown+"s";
-    if(countdown<=0){clearInterval(interval); cooldown=false; countdownText.textContent="";}
+    countdown--;
+    if(countdown<0){clearInterval(interval); countdownText.textContent=""; callback();}
   },1000);
 }
 
-// Cookie click → show fortune immediately
 cookie.addEventListener("click",()=>{
   if(cooldown) return;
+  cooldown=true;
   cookie.classList.add("shake","snap-open");
   setTimeout(()=>{cookie.classList.remove("shake","snap-open"); displayFortune(getFortune());},600);
 });
 
-// Close button → hide card & start cooldown
 closeBtn.addEventListener("click",()=>{
   fortuneCard.classList.remove("show");
   fortuneCard.setAttribute("aria-hidden","true");
-  startCooldown();
+  startCooldown(()=>{cooldown=false;});
 });
 </script>
-
 </body>
 </html>
