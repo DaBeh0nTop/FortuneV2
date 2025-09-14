@@ -1,15 +1,17 @@
-{
-  "fortunes": [
-    { "id": 1, "lang": "en", "type": "funny", "message": "You will step on Lego today. Beware." },
-    { "id": 2, "lang": "en", "type": "lucky", "message": "A hidden blessing will reveal itself soon." },
-    { "id": 3, "lang": "tl", "type": "hugot", "message": "Kung mahal ka niya, hindi ka niya ipaparamdam na pangalawa." },
-    { "id": 4, "lang": "tl", "type": "funny", "message": "Magugutom ka mamaya. Pero hindi ka pa rin marunong magluto." },
-    { "id": 5, "lang": "en", "type": "sarcasm", "message": "Congratulations! You will win an argument… in your head." },
-    { "id": 6, "lang": "en", "type": "unlucky", "message": "Oops. That sound wasn’t your chair." },
-    { "id": 7, "lang": "tl", "type": "lovely", "message": "May lihim na humahanga sa’yo. Clue: lagi mo siyang nakikita." },
-    { "id": 8, "lang": "en", "type": "uplifting", "message": "The darkest nights bring the brightest stars." },
-    { "id": 9, "lang": "tl", "type": "beware", "message": "May darating na chismis. Huwag kang papatol." },
-    { "id": 10, "lang": "en", "type": "hugot", "message": "Sometimes, the cookie crumbles… like your last relationship." }
-    // … continue up to 500–1000 entries
-  ]
-}
+[
+  {"id": 1, "category": "funny", "text": "Your WiFi will betray you at the worst possible moment."},
+  {"id": 2, "category": "hugot", "text": "Hindi ka iniwan, nagpalit lang ng kasama."},
+  {"id": 3, "category": "lucky", "text": "A surprise blessing is already on its way to you."},
+  {"id": 4, "category": "funny", "text": "Ang ganda mo nga, pero late ka pa rin lagi."},
+  {"id": 5, "category": "sarcasm", "text": "Yes, keep procrastinating… success will totally wait for you."},
+  {"id": 6, "category": "uplifting", "text": "Kahit gaano kabigat ang araw, kaya mo pa ring ngumiti."},
+  {"id": 7, "category": "beware", "text": "Not everything shiny is gold. Be cautious today."},
+  {"id": 8, "category": "lovely", "text": "May isang tao na palaging masaya kapag naririnig ang pangalan mo."},
+  {"id": 9, "category": "unlucky", "text": "Don’t test your luck today — even your charger might betray you."},
+  {"id": 10, "category": "inspiring", "text": "Bawat pagkatalo ay hakbang papunta sa panalo."},
+  {"id": 11, "category": "dabeh", "text": "Tangina mo po"},
+  {"id": 12, "category": "dabeh", "text": "Kinginamo"},
+  {"id": 13, "category": "dabeh", "text": "Fuck off"},
+  {"id": 14, "category": "dabeh", "text": "Putang ina"},
+  {"id": 15, "category": "dabeh", "text": "Pucha ka"}
+]
