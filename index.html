@@ -13,7 +13,6 @@
       height: 100vh;
       background: linear-gradient(135deg, #ffecd2, #fcb69f);
       font-family: 'Trebuchet MS', sans-serif;
-      overflow: hidden;
     }
 
     h1 {
@@ -22,14 +21,29 @@
       text-shadow: 1px 1px 2px #fff;
     }
 
-    .cookie {
-      width: 150px;
+    .cookie-container {
+      position: relative;
+      width: 160px;
+      height: 160px;
       cursor: pointer;
-      transition: transform 0.3s ease;
     }
 
-    .cookie:hover {
-      transform: scale(1.1) rotate(-5deg);
+    .half {
+      position: absolute;
+      top: 0;
+      width: 80px;
+      height: 160px;
+      transition: transform 0.6s ease;
+    }
+
+    .left {
+      left: 0;
+      transform-origin: right center;
+    }
+
+    .right {
+      right: 0;
+      transform-origin: left center;
     }
 
     .fortune {
@@ -40,7 +54,7 @@
       border-radius: 8px;
       font-size: 1.1rem;
       color: #3e2c00;
-      max-width: 300px;
+      max-width: 350px;
       text-align: center;
       display: none;
       animation: fadeIn 0.7s ease;
@@ -50,34 +64,71 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    .open-left {
+      transform: rotate(-25deg) translateX(-40px);
+    }
+    .open-right {
+      transform: rotate(25deg) translateX(40px);
+    }
   </style>
 </head>
 <body>
   <h1>🥠 Crack the Cookie!</h1>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Fortune_cookie.png" alt="Fortune Cookie" class="cookie" id="cookie">
-  
+
+  <div class="cookie-container" id="cookie">
+    <img src="https://i.imgur.com/1nqjYni.png" class="half left" alt="Left half">
+    <img src="https://i.imgur.com/9r4qLhM.png" class="half right" alt="Right half">
+  </div>
+
   <div class="fortune" id="fortune"></div>
 
   <script>
-    const fortunes = [
-      "You will find joy in unexpected places.",
-      "A thrilling time is in your immediate future.",
-      "Someone is thinking of you right now.",
-      "Adventure can be real happiness.",
-      "Your creativity will lead you to success.",
-      "Good news will come to you by text.",
-      "You are stronger than you think.",
-      "Don’t just dream it—do it!",
-      "Happiness is around the corner."
-    ];
+    let fortunes = null;
+    let cracked = false;
 
     const cookie = document.getElementById("cookie");
+    const left = cookie.querySelector(".left");
+    const right = cookie.querySelector(".right");
     const fortuneBox = document.getElementById("fortune");
 
+    // Load fortunes from external JSON
+    fetch("fortunes.json")
+      .then(res => res.json())
+      .then(data => { fortunes = data; })
+      .catch(err => console.error("Error loading fortunes:", err));
+
+    function getRandomFortune() {
+      if (!fortunes) return "The cookie is empty...";
+
+      // Pick random language
+      const langs = Object.keys(fortunes);
+      const lang = langs[Math.floor(Math.random() * langs.length)];
+
+      // Pick good or bad
+      const type = Math.random() < 0.7 ? "good" : "bad"; // 70% good, 30% bad
+      const pool = fortunes[lang][type];
+
+      return pool[Math.floor(Math.random() * pool.length)];
+    }
+
     cookie.addEventListener("click", () => {
-      const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-      fortuneBox.textContent = randomFortune;
-      fortuneBox.style.display = "block";
+      if (!cracked) {
+        left.classList.add("open-left");
+        right.classList.add("open-right");
+
+        setTimeout(() => {
+          fortuneBox.textContent = getRandomFortune();
+          fortuneBox.style.display = "block";
+        }, 600);
+
+        cracked = true;
+      } else {
+        left.classList.remove("open-left");
+        right.classList.remove("open-right");
+        fortuneBox.style.display = "none";
+        cracked = false;
+      }
     });
   </script>
 </body>
