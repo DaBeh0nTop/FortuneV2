@@ -21,15 +21,17 @@ header{margin-bottom:15px;}
 header h1{font-size:2em;color:#333;}
 header p{font-size:1em;color:#555;}
 
-.container{display:flex; flex-direction:row; align-items:center; justify-content:center; z-index:2; gap:15px;}
+.container{
+  display:flex; flex-direction:row; align-items:center; justify-content:center; z-index:2; gap:30px;
+}
 .cookie{
-  width:180px; max-width:50vw; cursor:pointer; transition:transform 0.3s;
+  width:200px; max-width:50vw; cursor:pointer; transition:transform 0.3s;
   filter:drop-shadow(5px 5px 5px var(--cookie-shadow));
   transform-origin:center bottom;
 }
 .cookie:hover{transform:scale(1.05);}
 .cookie.snap-open{animation:snapOpen 0.6s forwards;}
-@keyframes snapOpen{0%{transform:scale(1) rotate(0deg);} 40%{transform:scale(1.1) rotate(-15deg);} 70%{transform:scale(1.05) rotate(10deg);} 100%{transform:scale(1) rotate(0deg);}}
+@keyframes snapOpen{0%{transform:scale(1) rotate(0deg);}40%{transform:scale(1.1) rotate(-15deg);}70%{transform:scale(1.05) rotate(10deg);}100%{transform:scale(1) rotate(0deg);}}
 .shake{animation:shake 0.5s cubic-bezier(0.36,0.07,0.19,0.97) both;}
 @keyframes shake{10%,90%{transform:translate3d(-1px,0,0);}20%,80%{transform:translate3d(2px,0,0);}30%,50%,70%{transform:translate3d(-4px,0,0);}40%,60%{transform:translate3d(4px,0,0);}}
 
@@ -57,33 +59,35 @@ header p{font-size:1em;color:#555;}
 }
 
 #animation-text{
-  position: fixed; top:65%; left:50%;
+  position: fixed; top:70%; left:50%;
   transform: translate(-50%,-50%);
-  font-size:1.6em; font-weight:700; text-align:center;
+  font-size:1.8em; font-weight:700; text-align:center;
   display:none; z-index:20;
-  background:rgba(0,0,0,0.2); padding:10px 20px; border-radius:15px;
+  background:rgba(0,0,0,0.3); padding:10px 20px; border-radius:15px;
   animation:wave 1.2s infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(45deg,#ff0000,#ff7f00,#ffff00,#00ff00,#0000ff,#4b0082,#8f00ff);
+  background-size: 400% 400%;
+  animation: rainbowMove 3s linear infinite, wave 1.2s infinite;
 }
 
 @keyframes wave{
   0%,100%{transform:translate(-50%,-50%) translateY(0);}
   50%{transform:translate(-50%,-50%) translateY(-10px);}
 }
-
-.rainbow{
-  background:linear-gradient(45deg,#ff0000,#ff7f00,#ffff00,#00ff00,#0000ff,#4b0082,#8f00ff);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-  animation:rainbowMove 3s linear infinite;
+@keyframes rainbowMove{
+  0%{background-position:0%}
+  100%{background-position:200%}
 }
-@keyframes rainbowMove{0%{background-position:0%}100%{background-position:200%}}
 
-.side-gif{width:120px; height:120px; object-fit:cover; border-radius:15px;}
+.side-gif{width:140px; height:140px; object-fit:cover; border-radius:15px;}
 
 @media(max-width:600px){
   header h1{font-size:1.5em;}
   .fortune-text{font-size:1.1em;}
-  .cookie{width:130px;}
-  .side-gif{width:80px;height:80px;}
+  .cookie{width:150px;}
+  .side-gif{width:100px;height:100px;}
 }
 </style>
 </head>
@@ -105,7 +109,7 @@ header p{font-size:1em;color:#555;}
   <button class="close-btn" id="close-btn">X Close</button>
 </div>
 
-<div id="animation-text" class="rainbow"></div>
+<div id="animation-text"></div>
 
 <audio id="bg-music" loop></audio>
 
@@ -148,7 +152,7 @@ function displayFortune(fortune){
 }
 
 function showAnimation(callback){
-  let countdown=Math.floor(Math.random()*6)+5; //5-10s
+  let countdown=Math.floor(Math.random()*6)+5;
   animationText.style.display="block";
   const messages=["Munching...","Digesting...","Blessed...","Eating...","Raging...","Thinking...","Dreaming..."];
   const interval=setInterval(()=>{
