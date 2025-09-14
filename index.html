@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Fortune Cookie</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: 'Trebuchet MS', sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #5a2d0c;
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    .cookie {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .cookie:hover {
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .fortune {
+      margin-top: 30px;
+      padding: 15px 20px;
+      background: #fff8e7;
+      border: 2px solid #d4af37;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      color: #3e2c00;
+      max-width: 300px;
+      text-align: center;
+      display: none;
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🥠 Crack the Cookie!</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Fortune_cookie.png" alt="Fortune Cookie" class="cookie" id="cookie">
+  
+  <div class="fortune" id="fortune"></div>
+
+  <script>
+    const fortunes = [
+      "You will find joy in unexpected places.",
+      "A thrilling time is in your immediate future.",
+      "Someone is thinking of you right now.",
+      "Adventure can be real happiness.",
+      "Your creativity will lead you to success.",
+      "Good news will come to you by text.",
+      "You are stronger than you think.",
+      "Don’t just dream it—do it!",
+      "Happiness is around the corner."
+    ];
+
+    const cookie = document.getElementById("cookie");
+    const fortuneBox = document.getElementById("fortune");
+
+    cookie.addEventListener("click", () => {
+      const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+      fortuneBox.textContent = randomFortune;
+      fortuneBox.style.display = "block";
+    });
+  </script>
+</body>
+</html>
