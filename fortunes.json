@@ -1,0 +1,50 @@
+{
+  "english": {
+    "good": [
+      "You will find joy in unexpected places.",
+      "Your creativity will lead you to success.",
+      "Good news will come to you soon.",
+      "Happiness is around the corner.",
+      "Adventure awaits you this weekend."
+    ],
+    "bad": [
+      "You will step on Lego tomorrow. Ouch!",
+      "Someone will eat your fries when you’re not looking.",
+      "Don’t trust pigeons today.",
+      "Your WiFi will betray you at the worst time.",
+      "Beware: Monday is coming faster than you think."
+    ]
+  },
+  "tagalog": {
+    "good": [
+      "Darating ang swerte sa hindi inaasahang oras.",
+      "Isang bagong oportunidad ang kakatok sa iyong pintuan.",
+      "Ang sipag at tiyaga mo ay magbubunga.",
+      "May magandang balitang darating mula sa kaibigan.",
+      "Laging may pag-asa sa bawat umaga."
+    ],
+    "bad": [
+      "Mawawala ang tsinelas mo ngayong linggo.",
+      "May darating na bisita pero walang pasalubong.",
+      "Malalamangan ka sa tong-its.",
+      "Ang ulam bukas ay tuyo lang.",
+      "May bubulong ng tsismis laban sa’yo."
+    ]
+  },
+  "ilocano": {
+    "good": [
+      "Adda ragsak a sumangbay iti biagmo.",
+      "Ti panagsagrap ket mangiturong iti panagballigi.",
+      "Umay ti baro a gundaway kadagiti plano.",
+      "Ti ayat ket mangted iti namnama.",
+      "Ti biag ket agbalin a napintas a dalan."
+    ],
+    "bad": [
+      "Agbaliw ti tiempo ket maikkat ti payongmo.",
+      "Maubos ti loadmo a kasla apagisu.",
+      "Agtalinaed a narigat ti klase inton bigat.",
+      "Ti asom ket mangan ti sapatosmo.",
+      "Ti wifi ket bumagsak iti oras ti quiz."
+    ]
+  }
+}
