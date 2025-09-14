@@ -12,7 +12,7 @@
   --funny:#ffd700; --inspiring:#87ceeb; --unlucky:#4a4a4a; --lucky:#008000;
   --sarcasm:#800080; --beware:#ff0000; --uplifting:#20b2aa; --lovely:#ff69b4;
   --hugot:#b22222; --dabeh:#ff4500;
-  --cookie-shadow:#e0ac69; --bg-start:#f5f5dc; --bg-end:#f0e68c;
+  --cookie-shadow:#e0ac69; --bg-start:#f0f0f0; --bg-end:#ffe4b5;
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -24,11 +24,10 @@ body{
   justify-content:center;
   align-items:center;
   min-height:100vh;
-  background:linear-gradient(135deg,var(--bg-start),var(--bg-end));
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(255 255 255 / 0.15) 2px, transparent 3px),
-    radial-gradient(circle at 80% 80%, rgba(255 255 255 / 0.15) 2px, transparent 3px);
-  background-size:100px 100px;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  background-image: url('https://i.postimg.cc/DyPq8f1v/subtle-bg.png');
+  background-size: cover;
+  background-position: center;
   text-align:center;
   padding:20px;
   user-select:none;
@@ -116,6 +115,7 @@ const fortuneText=document.getElementById("fortune-text");
 const countdownText=document.getElementById("countdown-text");
 const closeBtn=document.getElementById("close-btn");
 
+// Load fortunes
 fetch("fortunes.json")
   .then(res=>res.json())
   .then(data=>{fortunes=data; available=shuffle([...fortunes]);});
@@ -125,6 +125,7 @@ function shuffle(array){for(let i=array.length-1;i>0;i--){const j=Math.floor(Mat
 function getFortune(){if(available.length===0) available=shuffle([...fortunes]); return available.pop();}
 function getEmoji(c){switch(c){case"funny":return"😂";case"inspiring":return"✨";case"unlucky":return"😬";case"lucky":return"🍀";case"sarcasm":return"🙃";case"beware":return"⚠️";case"uplifting":return"🌈";case"lovely":return"💕";case"hugot":return"💔";case"dabeh":return"🛑";default:return"";}}
 
+// Display fortune immediately
 function displayFortune(fortune){
   categoryBadge.textContent=fortune.category.toUpperCase()+" "+getEmoji(fortune.category);
   categoryBadge.style.backgroundColor=categoryColors[fortune.category]||"#333";
@@ -134,30 +135,32 @@ function displayFortune(fortune){
   countdownText.textContent="";
 }
 
-function startCountdown(callback){
+// Start cooldown after closing
+function startCooldown(){
+  cooldown=true;
   const messages=["Munching...","Digesting...","Raging...","Blessed...","Crunching..."];
   let countdown=Math.floor(Math.random()*6)+5; // 5-10s
   countdownText.textContent=messages[Math.floor(Math.random()*messages.length)]+" "+countdown+"s";
+
   const interval=setInterval(()=>{
     countdown--;
     countdownText.textContent=messages[Math.floor(Math.random()*messages.length)]+" "+countdown+"s";
-    if(countdown<=0){clearInterval(interval); callback();}
+    if(countdown<=0){clearInterval(interval); cooldown=false; countdownText.textContent="";}
   },1000);
 }
 
+// Cookie click → show fortune immediately
 cookie.addEventListener("click",()=>{
   if(cooldown) return;
-  cooldown=true;
   cookie.classList.add("shake","snap-open");
-  setTimeout(()=>{
-    cookie.classList.remove("shake","snap-open");
-    startCountdown(()=>{displayFortune(getFortune()); cooldown=false;});
-  },600);
+  setTimeout(()=>{cookie.classList.remove("shake","snap-open"); displayFortune(getFortune());},600);
 });
 
+// Close button → hide card & start cooldown
 closeBtn.addEventListener("click",()=>{
   fortuneCard.classList.remove("show");
   fortuneCard.setAttribute("aria-hidden","true");
+  startCooldown();
 });
 </script>
 
