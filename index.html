@@ -38,7 +38,15 @@ header{text-align:center;margin-bottom:20px;}
 header h1{font-size:2em;color:#333;}
 header p{font-size:1em;color:#555;margin-top:5px;}
 
-.container{display:flex;flex-direction:column;align-items:center;z-index:2;}
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:2;
+  width:100%;
+}
+
 .cookie{
   width:200px; max-width:80vw; cursor:pointer; transition:transform 0.3s;
   filter:drop-shadow(5px 5px 5px var(--cookie-shadow));
@@ -47,17 +55,17 @@ header p{font-size:1em;color:#555;margin-top:5px;}
 .cookie:hover{transform:scale(1.05);}
 .cookie.snap-open{animation:snapOpen 0.6s forwards;}
 
-@keyframes snapOpen{0%{transform:scale(1) rotate(0deg);} 40%{transform:scale(1.1) rotate(-15deg);} 70%{transform:scale(1.05) rotate(10deg);} 100%{transform:scale(1) rotate(0deg);}}
+@keyframes snapOpen{0%{transform:scale(1) rotate(0deg);} 40%{transform:scale(1.1) rotate(-15deg);} 70%{transform:scale(1.05) rotate(10deg);} 100%{transform:scale(1) rotate(0deg);} }
 
 .shake{animation:shake 0.5s cubic-bezier(0.36,0.07,0.19,0.97) both;}
-@keyframes shake{10%,90%{transform:translate3d(-1px,0,0);} 20%,80%{transform:translate3d(2px,0,0);} 30%,50%,70%{transform:translate3d(-4px,0,0);} 40%,60%{transform:translate3d(4px,0,0);}}
+@keyframes shake{10%,90%{transform:translate3d(-1px,0,0);} 20%,80%{transform:translate3d(2px,0,0);} 30%,50%,70%{transform:translate3d(-4px,0,0);} 40%,60%{transform:translate3d(4px,0,0);} }
 
 .fortune-card{
   position:fixed; top:50%; left:50%; transform:translate(-50%,-50%) scale(0.5);
   opacity:0; visibility:hidden;
-  background:rgba(255 255 255 / 0.15); border-radius:20px;
+  background:rgba(255 255 255 / 0.2); border-radius:20px;
   padding:25px 30px; max-width:400px; width:90%;
-  text-align:center; backdrop-filter:blur(15px);
+  text-align:center; backdrop-filter:blur(20px);
   transition: transform 0.5s ease-out, opacity 0.5s ease-out, border-color 0.3s ease;
   border:4px solid transparent; z-index:10;
 }
@@ -66,10 +74,7 @@ header p{font-size:1em;color:#555;margin-top:5px;}
 .category-badge{font-family:"Poppins",sans-serif;font-weight:700;color:white;padding:6px 16px;border-radius:50px;text-transform:uppercase;font-size:0.85em;margin-bottom:12px;display:inline-block;}
 .fortune-text{font-size:1.3em;line-height:1.5;margin-bottom:15px;color:#222;}
 .close-btn{margin-top:10px;padding:5px 10px;border:none;border-radius:5px;cursor:pointer;font-weight:700;background:#333;color:#fff;}
-
-.countdown-text{
-  font-size:1.2em;color:#333;margin-top:10px;font-weight:700;
-}
+.countdown-text{font-size:1.2em;color:#333;margin-top:10px;font-weight:700;}
 
 @media(max-width:600px){
   header h1{font-size:1.5em;}
@@ -144,7 +149,10 @@ cookie.addEventListener("click",()=>{
   if(cooldown) return;
   cooldown=true;
   cookie.classList.add("shake","snap-open");
-  setTimeout(()=>{cookie.classList.remove("shake","snap-open"); startCountdown(()=>{displayFortune(getFortune()); cooldown=false;});},600);
+  setTimeout(()=>{
+    cookie.classList.remove("shake","snap-open");
+    startCountdown(()=>{displayFortune(getFortune()); cooldown=false;});
+  },600);
 });
 
 closeBtn.addEventListener("click",()=>{
@@ -152,5 +160,6 @@ closeBtn.addEventListener("click",()=>{
   fortuneCard.setAttribute("aria-hidden","true");
 });
 </script>
+
 </body>
 </html>
