@@ -1,135 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Virtual Fortune Cookie</title>
+  <title>🍪 Fortune Cookie</title>
   <style>
     body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(120deg, #ffecd2, #fcb69f);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background: linear-gradient(135deg, #ffecd2, #fcb69f);
-      font-family: 'Trebuchet MS', sans-serif;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-      color: #5a2d0c;
-      text-shadow: 1px 1px 2px #fff;
-    }
-
-    .cookie-container {
-      position: relative;
-      width: 160px;
-      height: 160px;
-      cursor: pointer;
-    }
-
-    .half {
-      position: absolute;
-      top: 0;
-      width: 80px;
-      height: 160px;
-      transition: transform 0.6s ease;
-    }
-
-    .left {
-      left: 0;
-      transform-origin: right center;
-    }
-
-    .right {
-      right: 0;
-      transform-origin: left center;
-    }
-
-    .fortune {
-      margin-top: 30px;
-      padding: 15px 20px;
-      background: #fff8e7;
-      border: 2px solid #d4af37;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      color: #3e2c00;
-      max-width: 350px;
       text-align: center;
-      display: none;
-      animation: fadeIn 0.7s ease;
+      overflow: hidden; /* Prevents scrollbars from appearing during animations */
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
     }
-
-    .open-left {
-      transform: rotate(-25deg) translateX(-40px);
+    #cookie {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      animation: pulse 2s infinite;
     }
-    .open-right {
-      transform: rotate(25deg) translateX(40px);
+    #cookie:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
     }
+    #cookie.crack {
+      animation: shake 0.5s ease-in-out;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-5px) rotate(-2deg); }
+      40%, 80% { transform: translateX(5px) rotate(2deg); }
+    }
+    .cracked-cookie {
+      width: 220px;
+      position: absolute;
+      transition: transform 0.5s ease;
+      z-index: -1;
+    }
+    .cracked-cookie.show {
+      z-index: 1; /* Bring to front after initial click */
+    }
+    .cracked-cookie.right-half {
+      transform: translateX(60px) rotate(10deg);
+    }
+    .cracked-cookie.left-half {
+      transform: translateX(-60px) rotate(-10deg);
+    }
+    #fortune-box {
+      margin-top: 2rem;
+      padding: 20px;
+      max-width: 500px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      font-size: 1.2rem;
+      opacity: 0;
+      transform: scale(0.5) rotateX(-90deg);
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      position: relative;
+      z-index: 2;
+    }
+    #fortune-box.show {
+      opacity: 1;
+      transform: scale(1) rotateX(0deg);
+    }
+    .tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+    .funny { background: #ff6b6b; }
+    .inspiring { background: #6bcB77; }
+    .lucky { background: #51c4d3; }
+    .unlucky { background: #444; }
+    .sarcasm { background: #c56cf0; }
+    .beware { background: #feca57; color: #000; }
+    .uplifting { background: #54a0ff; }
+    .lovely { background: #ff9ff3; }
+    .hugot { background: #ff793f; }
   </style>
 </head>
 <body>
-  <h1>🥠 Crack the Cookie!</h1>
-
-  <div class="cookie-container" id="cookie">
-    <img src="https://i.imgur.com/1nqjYni.png" class="half left" alt="Left half">
-    <img src="https://i.imgur.com/9r4qLhM.png" class="half right" alt="Right half">
+  <h1>🍪 Fortune Cookie</h1>
+  <div class="cookie-container">
+    <img id="cookie" src="images/cookie.png" alt="Fortune Cookie">
+    <img id="cracked-cookie-left" class="cracked-cookie" src="images/cookie_left.png" alt="Fortune Cookie Left Half">
+    <img id="cracked-cookie-right" class="cracked-cookie" src="images/cookie_right.png" alt="Fortune Cookie Right Half">
   </div>
-
-  <div class="fortune" id="fortune"></div>
+  <div id="fortune-box"></div>
 
   <script>
-    let fortunes = null;
-    let cracked = false;
-
+    let fortunes = [];
     const cookie = document.getElementById("cookie");
-    const left = cookie.querySelector(".left");
-    const right = cookie.querySelector(".right");
-    const fortuneBox = document.getElementById("fortune");
+    const fortuneBox = document.getElementById("fortune-box");
+    const cookieContainer = document.querySelector(".cookie-container");
+    const crackedLeft = document.getElementById("cracked-cookie-left");
+    const crackedRight = document.getElementById("cracked-cookie-right");
 
-    // Load fortunes from external JSON
-    fetch("fortunes.json")
-      .then(res => res.json())
-      .then(data => { fortunes = data; })
-      .catch(err => console.error("Error loading fortunes:", err));
-
-    function getRandomFortune() {
-      if (!fortunes) return "The cookie is empty...";
-
-      // Pick random language
-      const langs = Object.keys(fortunes);
-      const lang = langs[Math.floor(Math.random() * langs.length)];
-
-      // Pick good or bad
-      const type = Math.random() < 0.7 ? "good" : "bad"; // 70% good, 30% bad
-      const pool = fortunes[lang][type];
-
-      return pool[Math.floor(Math.random() * pool.length)];
+    async function loadFortunes() {
+      try {
+        const res = await fetch("fortunes.json");
+        const data = await res.json();
+        fortunes = data.fortunes;
+      } catch (error) {
+        console.error("Failed to load fortunes:", error);
+        fortuneBox.innerHTML = "<p>Error loading fortunes. Please try again later.</p>";
+      }
     }
 
-    cookie.addEventListener("click", () => {
-      if (!cracked) {
-        left.classList.add("open-left");
-        right.classList.add("open-right");
+    function resetCookie() {
+      cookie.style.display = "block";
+      crackedLeft.classList.remove("show", "left-half");
+      crackedRight.classList.remove("show", "right-half");
+      fortuneBox.classList.remove("show");
+      fortuneBox.innerHTML = "";
+    }
 
+    function openFortune() {
+      if (fortunes.length === 0) return;
+
+      // Reset for a new click
+      resetCookie();
+      
+      const f = fortunes[Math.floor(Math.random() * fortunes.length)];
+
+      // Animate the crack
+      cookie.classList.add("crack");
+
+      setTimeout(() => {
+        // Hide whole cookie and show cracked pieces
+        cookie.style.display = "none";
+        crackedLeft.classList.add("show", "left-half");
+        crackedRight.classList.add("show", "right-half");
+
+        // Reveal the fortune after a short delay
         setTimeout(() => {
-          fortuneBox.textContent = getRandomFortune();
-          fortuneBox.style.display = "block";
-        }, 600);
+          fortuneBox.innerHTML = `
+            <p>"${f.message}"</p>
+            <span class="tag ${f.type}">${f.type.toUpperCase()} • ${f.lang.toUpperCase()}</span>
+          `;
+          fortuneBox.classList.add("show");
+        }, 500); // Wait for the cookie halves to separate
+      }, 500); // Match shake animation duration
+    }
 
-        cracked = true;
-      } else {
-        left.classList.remove("open-left");
-        right.classList.remove("open-right");
-        fortuneBox.style.display = "none";
-        cracked = false;
-      }
-    });
+    cookie.addEventListener("click", openFortune);
+    loadFortunes();
   </script>
 </body>
 </html>
