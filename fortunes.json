@@ -1,17 +1,2502 @@
 [
-  {"id": 1, "category": "funny", "text": "Your WiFi will betray you at the worst possible moment."},
-  {"id": 2, "category": "hugot", "text": "Hindi ka iniwan, nagpalit lang ng kasama."},
-  {"id": 3, "category": "lucky", "text": "A surprise blessing is already on its way to you."},
-  {"id": 4, "category": "funny", "text": "Ang ganda mo nga, pero late ka pa rin lagi."},
-  {"id": 5, "category": "sarcasm", "text": "Yes, keep procrastinating… success will totally wait for you."},
-  {"id": 6, "category": "uplifting", "text": "Kahit gaano kabigat ang araw, kaya mo pa ring ngumiti."},
-  {"id": 7, "category": "beware", "text": "Not everything shiny is gold. Be cautious today."},
-  {"id": 8, "category": "lovely", "text": "May isang tao na palaging masaya kapag naririnig ang pangalan mo."},
-  {"id": 9, "category": "unlucky", "text": "Don’t test your luck today — even your charger might betray you."},
-  {"id": 10, "category": "inspiring", "text": "Bawat pagkatalo ay hakbang papunta sa panalo."},
-  {"id": 11, "category": "dabeh", "text": "Tangina mo po"},
-  {"id": 12, "category": "dabeh", "text": "Kinginamo"},
-  {"id": 13, "category": "dabeh", "text": "Fuck off"},
-  {"id": 14, "category": "dabeh", "text": "Putang ina"},
-  {"id": 15, "category": "dabeh", "text": "Pucha ka"}
+  {
+    "id": 1,
+    "category": "unlucky",
+    "text": "Rain may fall on your parade."
+  },
+  {
+    "id": 2,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 3,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 4,
+    "category": "hugot",
+    "text": "Memories linger, cherish or release."
+  },
+  {
+    "id": 5,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 6,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 7,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 8,
+    "category": "dabeh",
+    "text": "Fuck off!"
+  },
+  {
+    "id": 9,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 10,
+    "category": "funny",
+    "text": "You will laugh at a wrong meme."
+  },
+  {
+    "id": 11,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 12,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 13,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 14,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 15,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 16,
+    "category": "unlucky",
+    "text": "You will forget your umbrella."
+  },
+  {
+    "id": 17,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 18,
+    "category": "beware",
+    "text": "Someone is plotting a surprise."
+  },
+  {
+    "id": 19,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 20,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 21,
+    "category": "inspiring",
+    "text": "Good things come to those who hustle."
+  },
+  {
+    "id": 22,
+    "category": "lucky",
+    "text": "A small fortune awaits you."
+  },
+  {
+    "id": 23,
+    "category": "beware",
+    "text": "Not everything shiny is gold."
+  },
+  {
+    "id": 24,
+    "category": "hugot",
+    "text": "Heartbreak teaches lessons silently."
+  },
+  {
+    "id": 25,
+    "category": "dabeh",
+    "text": "Puta ka!"
+  },
+  {
+    "id": 26,
+    "category": "dabeh",
+    "text": "Kinginamo!"
+  },
+  {
+    "id": 27,
+    "category": "beware",
+    "text": "Not everything shiny is gold."
+  },
+  {
+    "id": 28,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 29,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 30,
+    "category": "beware",
+    "text": "Check your pockets twice today."
+  },
+  {
+    "id": 31,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 32,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 33,
+    "category": "funny",
+    "text": "Beware of falling donuts."
+  },
+  {
+    "id": 34,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 35,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 36,
+    "category": "beware",
+    "text": "Not everything shiny is gold."
+  },
+  {
+    "id": 37,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 38,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 39,
+    "category": "dabeh",
+    "text": "Puta ka!"
+  },
+  {
+    "id": 40,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 41,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 42,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 43,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 44,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 45,
+    "category": "funny",
+    "text": "Beware of falling donuts."
+  },
+  {
+    "id": 46,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 47,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 48,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 49,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 50,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 51,
+    "category": "dabeh",
+    "text": "Fuck off!"
+  },
+  {
+    "id": 52,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 53,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 54,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 55,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 56,
+    "category": "dabeh",
+    "text": "Puta ka!"
+  },
+  {
+    "id": 57,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 58,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 59,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 60,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 61,
+    "category": "beware",
+    "text": "Someone is plotting a surprise."
+  },
+  {
+    "id": 62,
+    "category": "funny",
+    "text": "Beware of falling donuts."
+  },
+  {
+    "id": 63,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 64,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 65,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 66,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 67,
+    "category": "unlucky",
+    "text": "Rain may fall on your parade."
+  },
+  {
+    "id": 68,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 69,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 70,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 71,
+    "category": "funny",
+    "text": "Your cat will judge you silently."
+  },
+  {
+    "id": 72,
+    "category": "hugot",
+    "text": "Memories linger, cherish or release."
+  },
+  {
+    "id": 73,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 74,
+    "category": "dabeh",
+    "text": "Kinginamo!"
+  },
+  {
+    "id": 75,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 76,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 77,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 78,
+    "category": "dabeh",
+    "text": "Puta ka!"
+  },
+  {
+    "id": 79,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 80,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 81,
+    "category": "lucky",
+    "text": "Unexpected joy is near."
+  },
+  {
+    "id": 82,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 83,
+    "category": "dabeh",
+    "text": "Puta ka!"
+  },
+  {
+    "id": 84,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 85,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 86,
+    "category": "unlucky",
+    "text": "Rain may fall on your parade."
+  },
+  {
+    "id": 87,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 88,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 89,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 90,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 91,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 92,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 93,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 94,
+    "category": "sarcasm",
+    "text": "Sure, like that will happen."
+  },
+  {
+    "id": 95,
+    "category": "inspiring",
+    "text": "Your smile can brighten the world."
+  },
+  {
+    "id": 96,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 97,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 98,
+    "category": "lucky",
+    "text": "A small fortune awaits you."
+  },
+  {
+    "id": 99,
+    "category": "funny",
+    "text": "Beware of falling donuts."
+  },
+  {
+    "id": 100,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 101,
+    "category": "unlucky",
+    "text": "Rain may fall on your parade."
+  },
+  {
+    "id": 102,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 103,
+    "category": "hugot",
+    "text": "Memories linger, cherish or release."
+  },
+  {
+    "id": 104,
+    "category": "dabeh",
+    "text": "Fuck off!"
+  },
+  {
+    "id": 105,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 106,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 107,
+    "category": "beware",
+    "text": "Someone is plotting a surprise."
+  },
+  {
+    "id": 108,
+    "category": "dabeh",
+    "text": "Fuck off!"
+  },
+  {
+    "id": 109,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 110,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 111,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 112,
+    "category": "inspiring",
+    "text": "Good things come to those who hustle."
+  },
+  {
+    "id": 113,
+    "category": "beware",
+    "text": "Check your pockets twice today."
+  },
+  {
+    "id": 114,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 115,
+    "category": "hugot",
+    "text": "Heartbreak teaches lessons silently."
+  },
+  {
+    "id": 116,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 117,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 118,
+    "category": "uplifting",
+    "text": "Good vibes only, always."
+  },
+  {
+    "id": 119,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 120,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 121,
+    "category": "unlucky",
+    "text": "Keys will hide from you."
+  },
+  {
+    "id": 122,
+    "category": "beware",
+    "text": "Check your pockets twice today."
+  },
+  {
+    "id": 123,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 124,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 125,
+    "category": "inspiring",
+    "text": "Your smile can brighten the world."
+  },
+  {
+    "id": 126,
+    "category": "inspiring",
+    "text": "Today is perfect to start something new."
+  },
+  {
+    "id": 127,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 128,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 129,
+    "category": "uplifting",
+    "text": "Good vibes only, always."
+  },
+  {
+    "id": 130,
+    "category": "inspiring",
+    "text": "Your smile can brighten the world."
+  },
+  {
+    "id": 131,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 132,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 133,
+    "category": "hugot",
+    "text": "Memories linger, cherish or release."
+  },
+  {
+    "id": 134,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 135,
+    "category": "dabeh",
+    "text": "Fuck off!"
+  },
+  {
+    "id": 136,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 137,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 138,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 139,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 140,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 141,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 142,
+    "category": "inspiring",
+    "text": "Today is perfect to start something new."
+  },
+  {
+    "id": 143,
+    "category": "funny",
+    "text": "You will laugh at a wrong meme."
+  },
+  {
+    "id": 144,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 145,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 146,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 147,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 148,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 149,
+    "category": "lucky",
+    "text": "Unexpected joy is near."
+  },
+  {
+    "id": 150,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 151,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 152,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 153,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 154,
+    "category": "dabeh",
+    "text": "Kinginamo!"
+  },
+  {
+    "id": 155,
+    "category": "beware",
+    "text": "Not everything shiny is gold."
+  },
+  {
+    "id": 156,
+    "category": "inspiring",
+    "text": "Good things come to those who hustle."
+  },
+  {
+    "id": 157,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 158,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 159,
+    "category": "beware",
+    "text": "Not everything shiny is gold."
+  },
+  {
+    "id": 160,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 161,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 162,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 163,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 164,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 165,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 166,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 167,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 168,
+    "category": "dabeh",
+    "text": "Fuck off!"
+  },
+  {
+    "id": 169,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 170,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 171,
+    "category": "inspiring",
+    "text": "Good things come to those who hustle."
+  },
+  {
+    "id": 172,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 173,
+    "category": "lucky",
+    "text": "Unexpected joy is near."
+  },
+  {
+    "id": 174,
+    "category": "uplifting",
+    "text": "Good vibes only, always."
+  },
+  {
+    "id": 175,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 176,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 177,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 178,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 179,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 180,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 181,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 182,
+    "category": "inspiring",
+    "text": "Your smile can brighten the world."
+  },
+  {
+    "id": 183,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 184,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 185,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 186,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 187,
+    "category": "unlucky",
+    "text": "Rain may fall on your parade."
+  },
+  {
+    "id": 188,
+    "category": "unlucky",
+    "text": "Keys will hide from you."
+  },
+  {
+    "id": 189,
+    "category": "funny",
+    "text": "Beware of falling donuts."
+  },
+  {
+    "id": 190,
+    "category": "lucky",
+    "text": "Unexpected joy is near."
+  },
+  {
+    "id": 191,
+    "category": "inspiring",
+    "text": "Today is perfect to start something new."
+  },
+  {
+    "id": 192,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 193,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 194,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 195,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 196,
+    "category": "unlucky",
+    "text": "You will forget your umbrella."
+  },
+  {
+    "id": 197,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 198,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 199,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 200,
+    "category": "beware",
+    "text": "Someone is plotting a surprise."
+  },
+  {
+    "id": 201,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 202,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 203,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 204,
+    "category": "unlucky",
+    "text": "You will forget your umbrella."
+  },
+  {
+    "id": 205,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 206,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 207,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 208,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 209,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 210,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 211,
+    "category": "funny",
+    "text": "Your cat will judge you silently."
+  },
+  {
+    "id": 212,
+    "category": "hugot",
+    "text": "Heartbreak teaches lessons silently."
+  },
+  {
+    "id": 213,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 214,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 215,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 216,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 217,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 218,
+    "category": "unlucky",
+    "text": "Keys will hide from you."
+  },
+  {
+    "id": 219,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 220,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 221,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 222,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 223,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 224,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 225,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 226,
+    "category": "dabeh",
+    "text": "Puta ka!"
+  },
+  {
+    "id": 227,
+    "category": "hugot",
+    "text": "Heartbreak teaches lessons silently."
+  },
+  {
+    "id": 228,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 229,
+    "category": "unlucky",
+    "text": "Rain may fall on your parade."
+  },
+  {
+    "id": 230,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 231,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 232,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 233,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 234,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 235,
+    "category": "dabeh",
+    "text": "Kinginamo!"
+  },
+  {
+    "id": 236,
+    "category": "hugot",
+    "text": "Memories linger, cherish or release."
+  },
+  {
+    "id": 237,
+    "category": "hugot",
+    "text": "Heartbreak teaches lessons silently."
+  },
+  {
+    "id": 238,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 239,
+    "category": "beware",
+    "text": "Check your pockets twice today."
+  },
+  {
+    "id": 240,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 241,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 242,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 243,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 244,
+    "category": "funny",
+    "text": "Beware of falling donuts."
+  },
+  {
+    "id": 245,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 246,
+    "category": "lucky",
+    "text": "A small fortune awaits you."
+  },
+  {
+    "id": 247,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 248,
+    "category": "hugot",
+    "text": "Heartbreak teaches lessons silently."
+  },
+  {
+    "id": 249,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 250,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 251,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 252,
+    "category": "beware",
+    "text": "Check your pockets twice today."
+  },
+  {
+    "id": 253,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 254,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 255,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 256,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 257,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 258,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 259,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 260,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 261,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 262,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 263,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 264,
+    "category": "beware",
+    "text": "Someone is plotting a surprise."
+  },
+  {
+    "id": 265,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 266,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 267,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 268,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 269,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 270,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 271,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 272,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 273,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 274,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 275,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 276,
+    "category": "unlucky",
+    "text": "Rain may fall on your parade."
+  },
+  {
+    "id": 277,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 278,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 279,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 280,
+    "category": "dabeh",
+    "text": "Kinginamo!"
+  },
+  {
+    "id": 281,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 282,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 283,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 284,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 285,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 286,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 287,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 288,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 289,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 290,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 291,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 292,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 293,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 294,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 295,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 296,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 297,
+    "category": "hugot",
+    "text": "Memories linger, cherish or release."
+  },
+  {
+    "id": 298,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 299,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 300,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 301,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 302,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 303,
+    "category": "funny",
+    "text": "Your cat will judge you silently."
+  },
+  {
+    "id": 304,
+    "category": "hugot",
+    "text": "Heartbreak teaches lessons silently."
+  },
+  {
+    "id": 305,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 306,
+    "category": "hugot",
+    "text": "Heartbreak teaches lessons silently."
+  },
+  {
+    "id": 307,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 308,
+    "category": "uplifting",
+    "text": "Good vibes only, always."
+  },
+  {
+    "id": 309,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 310,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 311,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 312,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 313,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 314,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 315,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 316,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 317,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 318,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 319,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 320,
+    "category": "inspiring",
+    "text": "Today is perfect to start something new."
+  },
+  {
+    "id": 321,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 322,
+    "category": "dabeh",
+    "text": "Kinginamo!"
+  },
+  {
+    "id": 323,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 324,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 325,
+    "category": "funny",
+    "text": "Beware of falling donuts."
+  },
+  {
+    "id": 326,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 327,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 328,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 329,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 330,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 331,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 332,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 333,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 334,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 335,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 336,
+    "category": "beware",
+    "text": "Not everything shiny is gold."
+  },
+  {
+    "id": 337,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 338,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 339,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 340,
+    "category": "uplifting",
+    "text": "Someone appreciates your kindness."
+  },
+  {
+    "id": 341,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 342,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 343,
+    "category": "inspiring",
+    "text": "Your smile can brighten the world."
+  },
+  {
+    "id": 344,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 345,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 346,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 347,
+    "category": "lucky",
+    "text": "A small fortune awaits you."
+  },
+  {
+    "id": 348,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 349,
+    "category": "beware",
+    "text": "Not everything shiny is gold."
+  },
+  {
+    "id": 350,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 351,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 352,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 353,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 354,
+    "category": "unlucky",
+    "text": "The toast lands buttered side down."
+  },
+  {
+    "id": 355,
+    "category": "dabeh",
+    "text": "Kinginamo!"
+  },
+  {
+    "id": 356,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 357,
+    "category": "beware",
+    "text": "Not everything shiny is gold."
+  },
+  {
+    "id": 358,
+    "category": "funny",
+    "text": "Beware of falling donuts."
+  },
+  {
+    "id": 359,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 360,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 361,
+    "category": "beware",
+    "text": "Check your pockets twice today."
+  },
+  {
+    "id": 362,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 363,
+    "category": "funny",
+    "text": "You will laugh at a wrong meme."
+  },
+  {
+    "id": 364,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 365,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 366,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 367,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 368,
+    "category": "inspiring",
+    "text": "Today is perfect to start something new."
+  },
+  {
+    "id": 369,
+    "category": "unlucky",
+    "text": "You will forget your umbrella."
+  },
+  {
+    "id": 370,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 371,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 372,
+    "category": "beware",
+    "text": "Someone is plotting a surprise."
+  },
+  {
+    "id": 373,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 374,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 375,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 376,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 377,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 378,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 379,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 380,
+    "category": "inspiring",
+    "text": "Believe in yourself, always."
+  },
+  {
+    "id": 381,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 382,
+    "category": "unlucky",
+    "text": "Rain may fall on your parade."
+  },
+  {
+    "id": 383,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 384,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 385,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 386,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 387,
+    "category": "unlucky",
+    "text": "Keys will hide from you."
+  },
+  {
+    "id": 388,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 389,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 390,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 391,
+    "category": "lucky",
+    "text": "A small fortune awaits you."
+  },
+  {
+    "id": 392,
+    "category": "hugot",
+    "text": "Memories linger, cherish or release."
+  },
+  {
+    "id": 393,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 394,
+    "category": "beware",
+    "text": "Not everything shiny is gold."
+  },
+  {
+    "id": 395,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 396,
+    "category": "inspiring",
+    "text": "Your smile can brighten the world."
+  },
+  {
+    "id": 397,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 398,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 399,
+    "category": "dabeh",
+    "text": "Tanginamo po!"
+  },
+  {
+    "id": 400,
+    "category": "beware",
+    "text": "Check your pockets twice today."
+  },
+  {
+    "id": 401,
+    "category": "dabeh",
+    "text": "Fuck off!"
+  },
+  {
+    "id": 402,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 403,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 404,
+    "category": "unlucky",
+    "text": "Keys will hide from you."
+  },
+  {
+    "id": 405,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 406,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 407,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 408,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 409,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 410,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 411,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 412,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 413,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 414,
+    "category": "uplifting",
+    "text": "Happiness is contagious, share it."
+  },
+  {
+    "id": 415,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 416,
+    "category": "lucky",
+    "text": "Unexpected joy is near."
+  },
+  {
+    "id": 417,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 418,
+    "category": "funny",
+    "text": "You will laugh at a wrong meme."
+  },
+  {
+    "id": 419,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 420,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 421,
+    "category": "lucky",
+    "text": "Unexpected joy is near."
+  },
+  {
+    "id": 422,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 423,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 424,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 425,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 426,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 427,
+    "category": "unlucky",
+    "text": "Keys will hide from you."
+  },
+  {
+    "id": 428,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 429,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 430,
+    "category": "funny",
+    "text": "Someone might steal your fries today."
+  },
+  {
+    "id": 431,
+    "category": "inspiring",
+    "text": "Small steps today lead to big leaps."
+  },
+  {
+    "id": 432,
+    "category": "lovely",
+    "text": "Love finds you in unexpected ways."
+  },
+  {
+    "id": 433,
+    "category": "sarcasm",
+    "text": "Life is short, enjoy the sarcasm."
+  },
+  {
+    "id": 434,
+    "category": "uplifting",
+    "text": "Good vibes only, always."
+  },
+  {
+    "id": 435,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 436,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 437,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 438,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 439,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 440,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 441,
+    "category": "inspiring",
+    "text": "Today is perfect to start something new."
+  },
+  {
+    "id": 442,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 443,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 444,
+    "category": "dabeh",
+    "text": "Fuck off!"
+  },
+  {
+    "id": 445,
+    "category": "funny",
+    "text": "You will laugh at a wrong meme."
+  },
+  {
+    "id": 446,
+    "category": "funny",
+    "text": "You will laugh at a wrong meme."
+  },
+  {
+    "id": 447,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 448,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 449,
+    "category": "inspiring",
+    "text": "Today is perfect to start something new."
+  },
+  {
+    "id": 450,
+    "category": "beware",
+    "text": "Check your pockets twice today."
+  },
+  {
+    "id": 451,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 452,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 453,
+    "category": "lucky",
+    "text": "Someone will compliment your shoes."
+  },
+  {
+    "id": 454,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 455,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 456,
+    "category": "funny",
+    "text": "You will trip over your own shoelaces."
+  },
+  {
+    "id": 457,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 458,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 459,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 460,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 461,
+    "category": "dabeh",
+    "text": "Fuck off!"
+  },
+  {
+    "id": 462,
+    "category": "uplifting",
+    "text": "Your smile brightens the day."
+  },
+  {
+    "id": 463,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 464,
+    "category": "hugot",
+    "text": "Some dreams fade, others shine."
+  },
+  {
+    "id": 465,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 466,
+    "category": "hugot",
+    "text": "Hindi lahat ng 'forever' natutupad."
+  },
+  {
+    "id": 467,
+    "category": "funny",
+    "text": "Your cat will judge you silently."
+  },
+  {
+    "id": 468,
+    "category": "sarcasm",
+    "text": "You\u2019re doing amazing, as always\u2026 not."
+  },
+  {
+    "id": 469,
+    "category": "lucky",
+    "text": "A small fortune awaits you."
+  },
+  {
+    "id": 470,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 471,
+    "category": "lovely",
+    "text": "Someone will think of you fondly."
+  },
+  {
+    "id": 472,
+    "category": "hugot",
+    "text": "Memories linger, cherish or release."
+  },
+  {
+    "id": 473,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 474,
+    "category": "funny",
+    "text": "Your cat will judge you silently."
+  },
+  {
+    "id": 475,
+    "category": "hugot",
+    "text": "You miss 100% of shots not taken."
+  },
+  {
+    "id": 476,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 477,
+    "category": "sarcasm",
+    "text": "Sure, like that will happen."
+  },
+  {
+    "id": 478,
+    "category": "funny",
+    "text": "You will laugh at a wrong meme."
+  },
+  {
+    "id": 479,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 480,
+    "category": "sarcasm",
+    "text": "Smile, it confuses people."
+  },
+  {
+    "id": 481,
+    "category": "lucky",
+    "text": "You might find a penny today."
+  },
+  {
+    "id": 482,
+    "category": "lucky",
+    "text": "Unexpected joy is near."
+  },
+  {
+    "id": 483,
+    "category": "sarcasm",
+    "text": "Keep procrastinating, success is patient."
+  },
+  {
+    "id": 484,
+    "category": "lucky",
+    "text": "Today is your lucky coffee sip."
+  },
+  {
+    "id": 485,
+    "category": "lucky",
+    "text": "A small fortune awaits you."
+  },
+  {
+    "id": 486,
+    "category": "lovely",
+    "text": "Cherish every moment with loved ones."
+  },
+  {
+    "id": 487,
+    "category": "beware",
+    "text": "Check your pockets twice today."
+  },
+  {
+    "id": 488,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  },
+  {
+    "id": 489,
+    "category": "unlucky",
+    "text": "You will forget your umbrella."
+  },
+  {
+    "id": 490,
+    "category": "funny",
+    "text": "You will laugh at a wrong meme."
+  },
+  {
+    "id": 491,
+    "category": "beware",
+    "text": "Beware of suspicious sandwiches."
+  },
+  {
+    "id": 492,
+    "category": "beware",
+    "text": "Do not trust the weather app."
+  },
+  {
+    "id": 493,
+    "category": "lucky",
+    "text": "Unexpected joy is near."
+  },
+  {
+    "id": 494,
+    "category": "unlucky",
+    "text": "Rain may fall on your parade."
+  },
+  {
+    "id": 495,
+    "category": "uplifting",
+    "text": "Your day will be full of light."
+  },
+  {
+    "id": 496,
+    "category": "lovely",
+    "text": "You are appreciated more than you know."
+  },
+  {
+    "id": 497,
+    "category": "lovely",
+    "text": "A friend will surprise you today."
+  },
+  {
+    "id": 498,
+    "category": "unlucky",
+    "text": "Your charger might betray you today."
+  },
+  {
+    "id": 499,
+    "category": "inspiring",
+    "text": "Your smile can brighten the world."
+  },
+  {
+    "id": 500,
+    "category": "dabeh",
+    "text": "Tarantado ka!"
+  }
 ]
