@@ -2,167 +2,223 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🍪 Fortune Cookie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fortune Cookie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --funny: #ffd700;
+      --inspiring: #87ceeb;
+      --unlucky: #4a4a4a;
+      --lucky: #008000;
+      --sarcasm: #800080;
+      --beware: #ff0000;
+      --uplifting: #20b2aa;
+      --lovely: #ff69b4;
+      --hugot: #b22222;
+      --cookie-shadow: #e0ac69;
+    }
+
     body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(120deg, #ffecd2, #fcb69f);
+      font-family: "Comfortaa", cursive;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-      overflow: hidden; /* Prevents scrollbars from appearing during animations */
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #ffe4ec, #d7f5ff);
       color: #333;
+      text-align: center;
+      user-select: none;
     }
-    #cookie {
-      width: 200px;
+
+    .container { display: flex; flex-direction: column; align-items: center; padding: 20px; }
+
+    .cookie {
+      width: 250px;
       cursor: pointer;
-      transition: transform 0.3s ease, filter 0.3s ease;
-      animation: pulse 2s infinite;
+      transition: transform 0.3s ease-in-out;
+      filter: drop-shadow(5px 5px 5px var(--cookie-shadow));
     }
-    #cookie:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+    .cookie:hover { transform: scale(1.05); }
+    .cookie.snap-open { animation: snapOpen 0.6s forwards; }
+
+    @keyframes snapOpen {
+      0% { transform: scale(1) rotate(0deg); }
+      40% { transform: scale(1.1) rotate(-15deg); }
+      70% { transform: scale(1.05) rotate(10deg); }
+      100% { transform: scale(1) rotate(0deg); }
     }
-    #cookie.crack {
-      animation: shake 0.5s ease-in-out;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
+    .shake { animation: shake 0.5s both; }
     @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-5px) rotate(-2deg); }
-      40%, 80% { transform: translateX(5px) rotate(2deg); }
+      10%,90% { transform: translate3d(-1px,0,0); }
+      20%,80% { transform: translate3d(2px,0,0); }
+      30%,50%,70% { transform: translate3d(-4px,0,0); }
+      40%,60% { transform: translate3d(4px,0,0); }
     }
-    .cracked-cookie {
-      width: 220px;
-      position: absolute;
-      transition: transform 0.5s ease;
-      z-index: -1;
+
+    .fortune-card {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0; visibility: hidden;
+      background: rgba(255 255 255 / 0.2);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0 0 0 / 0.15);
+      padding: 30px 40px;
+      max-width: 400px; width: 90%;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+      z-index: 10;
+      border: 4px solid transparent;
+      cursor: pointer;
     }
-    .cracked-cookie.show {
-      z-index: 1; /* Bring to front after initial click */
+    .fortune-card.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1; visibility: visible;
     }
-    .cracked-cookie.right-half {
-      transform: translateX(60px) rotate(10deg);
-    }
-    .cracked-cookie.left-half {
-      transform: translateX(-60px) rotate(-10deg);
-    }
-    #fortune-box {
-      margin-top: 2rem;
-      padding: 20px;
-      max-width: 500px;
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-      font-size: 1.2rem;
-      opacity: 0;
-      transform: scale(0.5) rotateX(-90deg);
-      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-      position: relative;
-      z-index: 2;
-    }
-    #fortune-box.show {
-      opacity: 1;
-      transform: scale(1) rotateX(0deg);
-    }
-    .tag {
+
+    .category-badge {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      margin-bottom: 15px;
       display: inline-block;
-      margin-top: 10px;
-      padding: 5px 10px;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      color: #fff;
     }
-    .funny { background: #ff6b6b; }
-    .inspiring { background: #6bcB77; }
-    .lucky { background: #51c4d3; }
-    .unlucky { background: #444; }
-    .sarcasm { background: #c56cf0; }
-    .beware { background: #feca57; color: #000; }
-    .uplifting { background: #54a0ff; }
-    .lovely { background: #ff9ff3; }
-    .hugot { background: #ff793f; }
+    .fortune-text {
+      font-size: 1.4em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .fortune-image {
+      max-width: 120px;
+      margin-top: 10px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
-  <h1>🍪 Fortune Cookie</h1>
-  <div class="cookie-container">
-    <img id="cookie" src="images/cookie.png" alt="Fortune Cookie">
-    <img id="cracked-cookie-left" class="cracked-cookie" src="images/cookie_left.png" alt="Fortune Cookie Left Half">
-    <img id="cracked-cookie-right" class="cracked-cookie" src="images/cookie_right.png" alt="Fortune Cookie Right Half">
+  <div class="container">
+    <img src="img/cookie_closed.png" alt="Fortune Cookie" class="cookie" draggable="false" />
   </div>
-  <div id="fortune-box"></div>
+
+  <div class="fortune-card" role="dialog" aria-modal="true" aria-hidden="true" tabindex="0">
+    <div class="category-badge" id="category-badge"></div>
+    <p class="fortune-text" id="fortune-text"></p>
+    <img class="fortune-image" id="fortune-image" src="img/fortune.png" alt="Fortune slip" />
+  </div>
 
   <script>
-    let fortunes = [];
-    const cookie = document.getElementById("cookie");
-    const fortuneBox = document.getElementById("fortune-box");
-    const cookieContainer = document.querySelector(".cookie-container");
-    const crackedLeft = document.getElementById("cracked-cookie-left");
-    const crackedRight = document.getElementById("cracked-cookie-right");
+    document.addEventListener("DOMContentLoaded", async () => {
+      const cookie = document.querySelector(".cookie");
+      const fortuneCard = document.querySelector(".fortune-card");
+      const categoryBadge = document.getElementById("category-badge");
+      const fortuneText = document.getElementById("fortune-text");
+      const fortuneImage = document.getElementById("fortune-image");
 
-    async function loadFortunes() {
-      try {
-        const res = await fetch("fortunes.json");
-        const data = await res.json();
-        fortunes = data.fortunes;
-      } catch (error) {
-        console.error("Failed to load fortunes:", error);
-        fortuneBox.innerHTML = "<p>Error loading fortunes. Please try again later.</p>";
+      let allFortunes = [];
+      let availableFortunes = [];
+      let cooldown = false;
+
+      const categoryColors = {
+        funny: "#FFD700",
+        inspiring: "#87CEEB",
+        unlucky: "#4A4A4A",
+        lucky: "#008000",
+        sarcasm: "#800080",
+        beware: "#FF0000",
+        uplifting: "#20B2AA",
+        lovely: "#FF69B4",
+        hugot: "#B22222",
+      };
+
+      async function loadFortunes() {
+        try {
+          const response = await fetch("fortunes.json");
+          allFortunes = await response.json();
+          availableFortunes = shuffle([...allFortunes]);
+        } catch (error) {
+          console.error("Error loading fortunes:", error);
+        }
       }
-    }
-
-    function resetCookie() {
-      cookie.style.display = "block";
-      crackedLeft.classList.remove("show", "left-half");
-      crackedRight.classList.remove("show", "right-half");
-      fortuneBox.classList.remove("show");
-      fortuneBox.innerHTML = "";
-    }
-
-    function openFortune() {
-      if (fortunes.length === 0) return;
-
-      // Reset for a new click
-      resetCookie();
-      
-      const f = fortunes[Math.floor(Math.random() * fortunes.length)];
-
-      // Animate the crack
-      cookie.classList.add("crack");
-
-      setTimeout(() => {
-        // Hide whole cookie and show cracked pieces
-        cookie.style.display = "none";
-        crackedLeft.classList.add("show", "left-half");
-        crackedRight.classList.add("show", "right-half");
-
-        // Reveal the fortune after a short delay
-        setTimeout(() => {
-          fortuneBox.innerHTML = `
-            <p>"${f.message}"</p>
-            <span class="tag ${f.type}">${f.type.toUpperCase()} • ${f.lang.toUpperCase()}</span>
-          `;
-          fortuneBox.classList.add("show");
-        }, 500); // Wait for the cookie halves to separate
-      }, 500); // Match shake animation duration
-    }
-
-    cookie.addEventListener("click", openFortune);
-    loadFortunes();
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+      function getFortune() {
+        if (availableFortunes.length === 0) {
+          availableFortunes = shuffle([...allFortunes]);
+        }
+        const randomIndex = Math.floor(Math.random() * availableFortunes.length);
+        return availableFortunes.splice(randomIndex, 1)[0];
+      }
+      function getEmoji(category) {
+        const emojis = {
+          funny: "😂",
+          inspiring: "✨",
+          unlucky: "😬",
+          lucky: "🍀",
+          sarcasm: "🙃",
+          beware: "⚠️",
+          uplifting: "🌈",
+          lovely: "💕",
+          hugot: "💔",
+        };
+        return emojis[category] || "";
+      }
+      function displayFortune() {
+        const fortune = getFortune();
+        categoryBadge.textContent = fortune.category.toUpperCase() + " " + getEmoji(fortune.category);
+        categoryBadge.style.backgroundColor = categoryColors[fortune.category];
+        fortuneCard.style.borderColor = categoryColors[fortune.category];
+        fortuneText.textContent = fortune.text;
+        fortuneCard.classList.add("show");
+        fortuneCard.setAttribute("aria-hidden", "false");
+        fortuneCard.focus();
+      }
+      function setCooldown() {
+        cooldown = true;
+        setTimeout(() => { cooldown = false; }, 2000);
+      }
+      cookie.addEventListener("click", () => {
+        if (cooldown) return;
+        if (fortuneCard.classList.contains("show")) {
+          fortuneCard.classList.remove("show");
+          fortuneCard.setAttribute("aria-hidden", "true");
+          setTimeout(() => {
+            cookie.classList.add("shake","snap-open");
+            setTimeout(() => {
+              cookie.classList.remove("shake","snap-open");
+              displayFortune();
+              setCooldown();
+            }, 600);
+          }, 400);
+        } else {
+          cookie.classList.add("shake","snap-open");
+          setTimeout(() => {
+            cookie.classList.remove("shake","snap-open");
+            displayFortune();
+            setCooldown();
+          }, 600);
+        }
+      });
+      fortuneCard.addEventListener("click", () => {
+        if (cooldown) return;
+        fortuneCard.classList.remove("show");
+        fortuneCard.setAttribute("aria-hidden", "true");
+        setCooldown();
+      });
+      await loadFortunes();
+    });
   </script>
 </body>
 </html>
