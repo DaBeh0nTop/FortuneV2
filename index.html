@@ -167,10 +167,11 @@ header p{font-size:1em;color:#eee;margin-top:5px;}
 
 <div id="animation-text"></div>
 
-<audio id="bg-music" autoplay loop muted></audio>
+<!-- NOTE: audio attributes handled in JS for mobile autoplay policies -->
+<audio id="bg-music" preload="none" playsinline></audio>
 
 <script>
-let fortunes = []; // Load from fortunes.json
+let fortunes = []; // will load from fortunes.json
 let available = [];
 let cooldown = false;
 
@@ -182,89 +183,147 @@ const closeBtn = document.getElementById("close-btn");
 const animationText = document.getElementById("animation-text");
 const bgMusic = document.getElementById("bg-music");
 
-// Background music playlist (direct mp3 links for autoplay)
+/* ==================== AUDIO: MOBILE-SAFE STARTER ==================== */
+
+// files are in /songs per your repo
 const songs = [
-  "song1.mp3","song2.mp3","song3.mp3","song4.mp3"
+  "songs/song1.mp3",
+  "songs/song2.mp3",
+  "songs/song3.mp3",
+  "songs/song4.mp3",
+  // add more if you upload (song5.mp3, etc.)
 ];
 
-// Map categories to badge classes and emojis
+function shuffle(arr){
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+let songQueue = shuffle([...songs]);
+function nextSongSrc(){
+  if (songQueue.length === 0) songQueue = shuffle([...songs]);
+  return songQueue.pop();
+}
+
+let started = false;
+
+async function playRandomSong(){
+  if (!bgMusic.src) bgMusic.src = nextSongSrc();
+  bgMusic.loop = false;         // rotate through tracks
+  bgMusic.muted = false;
+  bgMusic.volume = 1.0;
+
+  try {
+    await bgMusic.play();
+  } catch (err) {
+    console.log("Playback blocked, will retry on next gesture:", err?.message || err);
+    started = false;
+  }
+}
+
+async function startMusicOnce(){
+  if (started) return;
+  started = true;
+  bgMusic.src = nextSongSrc();
+  await playRandomSong();
+
+  // If still paused (blocked), allow another attempt on next gesture
+  if (bgMusic.paused) {
+    started = false;
+    return;
+  }
+  removeStartListeners();
+}
+
+function addStartListeners(){
+  window.addEventListener("click", startMusicOnce);
+  window.addEventListener("keydown", startMusicOnce);
+  window.addEventListener("touchstart", startMusicOnce, {passive:true});
+}
+function removeStartListeners(){
+  window.removeEventListener("click", startMusicOnce);
+  window.removeEventListener("keydown", startMusicOnce);
+  window.removeEventListener("touchstart", startMusicOnce);
+}
+
+// ensure cookie tap also kicks off audio
+cookie.addEventListener("click", startMusicOnce);
+
+// when a song ends, move to a new random one
+bgMusic.addEventListener("ended", () => {
+  bgMusic.src = nextSongSrc();
+  playRandomSong();
+});
+
+// arm the starters
+addStartListeners();
+
+/* ==================== FORTUNES + UI ==================== */
+
 const categoryStyles = {
   positive: {class:"category-positive", emoji:"🌟"},
-  neutral: {class:"category-neutral", emoji:"🔮"},
-  warning: {class:"category-warning", emoji:"⚠️"},
+  neutral:  {class:"category-neutral",  emoji:"🔮"},
+  warning:  {class:"category-warning",  emoji:"⚠️"},
   negative: {class:"category-negative", emoji:"💔"},
 };
 
-function playRandomSong(){
-  const song = songs[Math.floor(Math.random()*songs.length)];
-  bgMusic.src = song;
-  bgMusic.play().catch(e=>{
-    // Autoplay might be blocked, wait for user interaction
-    console.log("Autoplay prevented, will play on user interaction.");
-  });
-}
-playRandomSong();
-bgMusic.addEventListener("ended", playRandomSong);
-
-// Try to unmute and play on first user interaction
-function enableAudioOnInteraction(){
-  if(bgMusic.muted){
-    bgMusic.muted = false;
-    bgMusic.play().catch(()=>{});
-  }
-  window.removeEventListener("click", enableAudioOnInteraction);
-  window.removeEventListener("keydown", enableAudioOnInteraction);
-}
-window.addEventListener("click", enableAudioOnInteraction);
-window.addEventListener("keydown", enableAudioOnInteraction);
-
-// Load fortunes
+// Load fortunes.json (must be in same directory as this HTML)
 fetch("fortunes.json")
-  .then(res=>res.json())
-  .then(data=>{
+  .then(res => res.json())
+  .then(data => {
     fortunes = data;
     available = shuffle([...fortunes]);
-  });
+  })
+  .catch(err => console.error("Failed to load fortunes.json:", err));
 
-function shuffle(array){for(let i=array.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[array[i],array[j]]=[array[j],array[i]];} return array;}
-function getFortune(){if(available.length===0) available=shuffle([...fortunes]); return available.pop();}
+function getFortune(){
+  if (available.length === 0) available = shuffle([...fortunes]);
+  return available.pop();
+}
 
 function displayFortune(fortune){
-  const catKey = fortune.category.toLowerCase();
-  const style = categoryStyles[catKey] || {class:"category-neutral", emoji:"🔮"};
-  categoryBadge.textContent = style.emoji + " " + fortune.category.toUpperCase();
+  const catKey = (fortune.category || "Neutral").toLowerCase();
+  const style = categoryStyles[catKey] || categoryStyles.neutral;
+
+  categoryBadge.textContent = `${style.emoji} ${String(fortune.category || "Neutral").toUpperCase()}`;
   categoryBadge.className = "category-badge " + style.class;
-  fortuneText.textContent = fortune.text;
+  fortuneText.textContent = fortune.text || "";
   fortuneCard.classList.add("show");
   fortuneCard.setAttribute("aria-hidden","false");
 }
 
 function showAnimation(callback){
-  let countdown = Math.floor(Math.random()*6)+5; //5-10s
+  let countdown = Math.floor(Math.random()*6)+5; // 5–10s
   animationText.style.display = "block";
   const messages = ["Munching...","Digesting...","Eating...","Blessed...","Crunching...","Thinking...","Dreaming..."];
   const interval = setInterval(()=>{
     countdown--;
-    animationText.textContent = messages[Math.floor(Math.random()*messages.length)]+" ["+countdown+"s]";
-    if(countdown<=0){
+    animationText.textContent = messages[Math.floor(Math.random()*messages.length)] + " [" + countdown + "s]";
+    if(countdown <= 0){
       clearInterval(interval);
-      animationText.style.display="none";
+      animationText.style.display = "none";
       callback();
     }
   },1000);
 }
 
 cookie.addEventListener("click",()=>{
-  if(cooldown) return;
-  cooldown=true;
+  if (cooldown) return;
+  cooldown = true;
   cookie.classList.add("shake","snap-open");
-  setTimeout(()=>{cookie.classList.remove("shake","snap-open"); displayFortune(getFortune());},600);
+  setTimeout(()=>{
+    cookie.classList.remove("shake","snap-open");
+    displayFortune(getFortune());
+  },600);
 });
 
 closeBtn.addEventListener("click",()=>{
   fortuneCard.classList.remove("show");
   fortuneCard.setAttribute("aria-hidden","true");
-  showAnimation(()=>{cooldown=false;});
+  showAnimation(()=>{ cooldown = false; });
 });
 </script>
 
